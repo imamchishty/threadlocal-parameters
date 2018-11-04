@@ -6,7 +6,7 @@
 
     <groupId>com.shedhack.thread</groupId>
     <artifactId>threadlocal-parameters</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
 
 
     <description>ThreadLocal utility that provides static method for (String type) setting, getting and clearing a ThreadLocal..</description>
