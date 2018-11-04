@@ -7,14 +7,65 @@
     <groupId>com.shedhack.thread</groupId>
     <artifactId>threadlocal-parameters</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+
+
+    <description>ThreadLocal utility that provides static method for (String type) setting, getting and clearing a ThreadLocal..</description>
+    <url>https://github.com/imamchishty/threadlocal-parameters</url>
+    <name>threadlocal-parameters</name>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git@github.com:imamchishty/threadlocal-parameters.git</connection>
+        <developerConnection>scm:git:git@github.com:imamchishty/threadlocal-parameters.git</developerConnection>
+        <url>git@github.com:imamchishty/threadlocal-parameters.git</url>
+        <tag>threadlocal-parameters-1.0.0</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray</id>
+            <url>https://api.bintray.com/maven/imamchishty/maven/threadlocal-parameters</url>
+        </repository>
+    </distributionManagement>
+
+    <developers>
+        <developer>
+            <name>Imam Chishty</name>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <email>imamchishty@gmail.com</email>
+            <organization>Shedhack.com</organization>
+            <organizationUrl>http://www.shedhack.com</organizationUrl>
+        </developer>
+    </developers>
+
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
                 <configuration>
-                    <source>7</source>
-                    <target>7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -30,5 +81,64 @@
         </dependency>
 
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>release-sign-artifacts</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.1</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
