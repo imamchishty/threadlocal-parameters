@@ -6,7 +6,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 /**
- * This annotation works in conjuction with {@link com.shedhack.thread.annotation.ThreadLocalParameters}.
+ * This annotation works in conjuction with {@link ThreadLocalParameters}.
  * For any params that may contain sensitive values such as password then mark those params using this
  * annotation.
  */

@@ -14,7 +14,7 @@ public class ThreadLocalParametersTest {
 
 
         // Act
-        ThreadLocalParameters tlp = new ThreadLocalParameters();
+        ThreadLocalParametersUtility tlp = new ThreadLocalParametersUtility();
         tlp.set(chain);
 
 

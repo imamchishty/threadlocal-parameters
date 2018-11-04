@@ -6,7 +6,7 @@ package com.shedhack.thread.parameters;
  *
  * @author imamchishty
  */
-public class ThreadLocalParameters {
+public class ThreadLocalParametersUtility {
 
     private static final ThreadLocal<MethodChain> local = new ThreadLocal<>();
 
