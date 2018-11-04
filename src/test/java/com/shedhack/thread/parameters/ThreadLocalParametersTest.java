@@ -1,8 +1,5 @@
 package com.shedhack.thread.parameters;
 
-import com.shedhack.thread.parameters.parameters.MethodCall;
-import com.shedhack.thread.parameters.parameters.MethodChain;
-import com.shedhack.thread.parameters.parameters.ThreadLocalParameters;
 import org.junit.Assert;
 import org.junit.Test;
 

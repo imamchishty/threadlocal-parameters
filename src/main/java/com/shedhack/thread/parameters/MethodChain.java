@@ -1,4 +1,4 @@
-package com.shedhack.thread.parameters.parameters;
+package com.shedhack.thread.parameters;
 
 import java.util.ArrayList;
 import java.util.List;
