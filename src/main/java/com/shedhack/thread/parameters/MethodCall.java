@@ -47,6 +47,11 @@ public class MethodCall {
             return this;
         }
 
+        public Builder withParams(Map<String, Object> params) {
+            this.params = params;
+            return this;
+        }
+
         public MethodCall build() {
             if(name !=null && params != null) {
                 return new MethodCall(name, params);
